@@ -1,0 +1,12 @@
+{
+    "smartcpdv1App": {
+        "NOTIFICATIONS" : {
+            "null": "",
+            "ORDERPROCESSING": "ORDERPROCESSING",
+            "COMPLETE": "COMPLETE",
+            "CANCELLLED": "CANCELLLED",
+            "REFUND": "REFUND",
+            "ONHOLD": "ONHOLD"
+        }
+    }
+}

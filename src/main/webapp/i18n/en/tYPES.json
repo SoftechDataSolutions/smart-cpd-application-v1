@@ -1,0 +1,10 @@
+{
+    "smartcpdv1App": {
+        "TYPES" : {
+            "null": "",
+            "RESIDENCE": "RESIDENCE",
+            "COMMERCIAL": "COMMERCIAL",
+            "INDUSTRIAL": "INDUSTRIAL"
+        }
+    }
+}

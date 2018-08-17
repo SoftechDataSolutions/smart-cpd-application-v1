@@ -1,0 +1,9 @@
+{
+    "smartcpdv1App": {
+        "PAYMENT" : {
+            "null": "",
+            "PAYPAL": "PAYPAL",
+            "STRIPE": "STRIPE"
+        }
+    }
+}
