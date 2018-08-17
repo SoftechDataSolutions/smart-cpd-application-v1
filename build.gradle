@@ -168,6 +168,7 @@ dependencies {
     compile "javax.cache:cache-api"
     compile "org.hibernate:hibernate-core"
     compile "com.zaxxer:HikariCP"
+    compile "com.github.vanroy:spring-boot-starter-data-jest:3.1.4.RELEASE"
     compile "org.apache.commons:commons-lang3"
     compile "commons-io:commons-io"
     compile "javax.transaction:javax.transaction-api"
