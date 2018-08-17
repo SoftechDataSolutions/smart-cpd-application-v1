@@ -1,0 +1,56 @@
+version: '2'
+services:
+    smartcpdv1-app:
+        image: smartcpdv1
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://smartcpdv1-mysql:3306/smartcpdv1?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10
+            - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=smartcpdv1-elasticsearch:9300
+            - JHIPSTER_LOGGING_LOGSTASH_ENABLED=true
+            - JHIPSTER_LOGGING_LOGSTASH_HOST=jhipster-logstash
+            - JHIPSTER_METRICS_LOGS_ENABLED=true
+            - JHIPSTER_METRICS_LOGS_REPORT_FREQUENCY=60
+        ports:
+            - 8080:8080
+    smartcpdv1-mysql:
+        image: mysql:5.7.20
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=smartcpdv1
+        command:             mysqld --lower_case_table_names=1 --skip-ssl
+            --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+    smartcpdv1-elasticsearch:
+        image: elasticsearch:5.6.10
+        command: -Enetwork.host=0.0.0.0 -Ediscovery.type=single-node
+    
+
+    jhipster-elasticsearch:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-elasticsearch
+    jhipster-logstash:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-logstash
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-console:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-console
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-import-dashboards:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-import-dashboards
+        depends_on:
+            - jhipster-elasticsearch
+    jhipster-curator:
+        extends:
+            file: jhipster-console.yml
+            service: jhipster-curator
+        depends_on:
+            - jhipster-elasticsearch

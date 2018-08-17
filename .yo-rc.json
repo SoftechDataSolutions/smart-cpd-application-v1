@@ -30,7 +30,16 @@
       "en"
     ],
     "clientFramework": "react",
-    "jhiPrefix": "jhi"
+    "jhiPrefix": "jhi",
+    "appsFolders": [
+      "smart-cpd-application-v1"
+    ],
+    "directoryPath": "../",
+    "monitoring": "elk",
+    "consoleOptions": [
+      "curator"
+    ],
+    "jwtSecretKey": "2cb3d9fd93371a7081527c930e1f883b289f4e39"
   },
   "git-provider": "GitHub",
   "git-company": "SoftechDataSolutions",
