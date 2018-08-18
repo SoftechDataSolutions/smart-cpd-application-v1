@@ -1,7 +1,7 @@
 apply plugin: 'com.heroku.sdk.heroku-gradle'
 
 heroku {
-  appName = "smart-cpd"
+  appName = "stark-lake-58440"
 }
 
 gradle.taskGraph.whenReady {taskGraph ->

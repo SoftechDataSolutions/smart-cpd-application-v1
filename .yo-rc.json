@@ -41,7 +41,7 @@
     ],
     "jwtSecretKey": "2cb3d9fd93371a7081527c930e1f883b289f4e39",
     "herokuDeployType": "git",
-    "herokuAppName": null
+    "herokuAppName": "stark-lake-58440"
   },
   "git-provider": "GitHub",
   "git-company": "SoftechDataSolutions",
