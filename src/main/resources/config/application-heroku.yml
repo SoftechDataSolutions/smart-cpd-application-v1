@@ -22,8 +22,22 @@ eureka:
 spring:
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: ${JDBC_DATABASE_URL}
-        username: ${JDBC_DATABASE_USERNAME}
-        password: ${JDBC_DATABASE_PASSWORD}
+        url: mysql://bmn1xp9oi1u3rh1i:elxoakrwu1184lpo@blonze2d5mrbmcgf.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/n85m89ojku7fcziv
+        username: bmn1xp9oi1u3rh1i
+        password: elxoakrwu1184lpo
         hikari:
             maximumPoolSize: 8
+    data:
+        elasticsearch:
+            properties:
+                path:
+                    home: target/elastic
+                transport:
+                    tcp:
+                        connect_timeout:120s
+        jest:
+            uri: https://cb2ed297cc3f48aab6e4811b2f49bdef.us-west1.gcp.cloud.es.io:9243
+            username: elastic
+            password: wEIdHdz2539rFRQrHRv8kV44
+            multi-threaded: true
+
